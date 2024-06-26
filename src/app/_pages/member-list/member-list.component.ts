@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/_interfaces/member';
 import { MemberService } from 'src/app/_services/member.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member-list',
@@ -10,7 +11,10 @@ import { MemberService } from 'src/app/_services/member.service';
 export class MemberListComponent implements OnInit {
   members: Member[] = [];
 
-  constructor(private memberService: MemberService) {}
+  constructor(
+    private memberService: MemberService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.memberService.getMembers().subscribe({
@@ -18,5 +22,9 @@ export class MemberListComponent implements OnInit {
         this.members = members;
       },
     });
+  }
+
+  goToPage(pageName:string){
+    this.router.navigate([`${pageName}`]);
   }
 }
