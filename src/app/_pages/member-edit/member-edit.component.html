@@ -1,0 +1,35 @@
+<h3>Editar integrante</h3>
+
+<form [formGroup]="memberEdit" (ngSubmit)="onSubmit(memberEdit.value)">
+
+  <div class="mb-3">
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="email">
+      Email
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div class="mb-3">
+    <label for="semester">
+      Semester
+    </label>
+    <input id="semester" type="text" formControlName="semester">
+  </div>
+
+  <div class="mb-3">
+    <label for="career">
+      Career
+    </label>
+    <input id="career" type="text" formControlName="career">
+  </div>
+
+  <button class="button" type="submit">Modificar</button>
+
+</form>

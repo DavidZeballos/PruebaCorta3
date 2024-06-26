@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MemberListComponent } from './_pages/member-list/member-list.component';
 import { MemberFormComponent } from './_pages/member-form/member-form.component';
+import { MemberEditComponent } from './_pages/member-edit/member-edit.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'member_form',
     component: MemberFormComponent,
+  },
+  {
+    path: 'member_edit',
+    component: MemberEditComponent,
   },
 ];
 
